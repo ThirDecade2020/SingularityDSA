@@ -3,5 +3,13 @@
   "compatibility_date": "2026-10-23",
   "assets": {
     "directory": "./public"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "dsa.singularitymachines.si",
+      "custom_domain": true
+    }
+  ],
+  "workers_dev": true,
+  "preview_urls": true
 }
