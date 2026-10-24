@@ -1,70 +1,164 @@
 # Singularity DSA
 
-Learn programming, data structures, and algorithms from first principles through interactive challenges.
+Learn programming, data structures, and algorithms from first principles.
 
-Part of the Singularity Machines application suite.
+**Production:** https://dsa.singularitymachines.si
 
-## Engineering Principles
+A Singularity Machines application and a working implementation of the
+**Singularity Engineering Template (SET)**.
 
-**Maximum Control, Minimum Abstraction.**
+**Maximum Control. Minimum Abstraction.**
 
-**Implement only what is demonstrably necessary.**
+## Mission
 
-Every component must address an identified requirement. No speculative architecture.
+Develop exceptional engineers through progressive, interactive learning,
+beginning with the smallest meaningful programming challenges.
 
-## Current Implementation
+## Production Architecture
 
-- Native HTML: public/index.html
-- Cloudflare Workers static assets: wrangler.jsonc
-- Source of truth: GitHub main
-- Production: https://dsa.singularitymachines.si
-- Fallback: https://singularitydsa.attentionagentauto.workers.dev
+| Component | Implementation |
+|---|---|
+| Interface | Native HTML, CSS, JavaScript |
+| Backend | Cloudflare Worker |
+| Hosting | Cloudflare Workers static assets |
+| AI Tutor | Cloudflare Workers AI, Qwen3-30B-A3B |
+| API | POST /api/tutor |
+| Rate limiting | 10 requests per 60 seconds per visitor key |
+| Source of truth | GitHub main |
+| Deployment | Wrangler CLI |
 
-No application framework, backend, or database is currently required.
+The application avoids unnecessary frameworks, databases, and infrastructure.
 
-## Deployment
+## MVP 001 — Progress
 
-1. Update files through GitHub web or API; no local Git required.
-2. Commit to main.
-3. Cloudflare automatically deploys using npx wrangler deploy.
-4. Confirm successful deployment in the Cloudflare dashboard.
-5. Verify production HTTPS using curl -I https://dsa.singularitymachines.si/
+- [x] Five atomic Python programming challenges
+- [x] Ten-step DSA Deep Knowledge methodology
+- [x] Interactive code editor and basic feedback
+- [x] Timed and untimed learning controls
+- [x] Challenge navigation
+- [x] Singularity Machines visual interface
+- [x] AI Tutor integration
+- [x] Production deployment
+- [x] Live production AI inference verification
+- [x] Production security-header verification
+- [ ] Complete browser acceptance testing
+- [ ] Expanded challenge library
+- [ ] Persistent learner progress
+
+Implemented features are not necessarily comprehensively validated.
+
+## Production Security
+
+- Content Security Policy restricting external scripts and connections
+- 8,192-byte maximum API request body
+- Explanation input validation
+- Rate limiting before AI inference
+- Same-origin API communication
+- Safe text rendering of AI responses
+
+Request-size rejection and rate limiting were tested locally.
+The production website, security headers, and AI inference were verified live.
+
+## SET — Singularity Engineering Template
+
+SET is a reusable engineering system developed through real software
+construction, testing, deployment, and documentation.
+
+SET transforms practical engineering experience into repeatable workflows
+that can be applied across Singularity Machines projects.
+
+Each SET agent represents an engineering discipline with a defined scope,
+procedure, checklist, and verification criteria.
+
+An agent is not necessarily an autonomous AI process. Automation is
+introduced only when it provides demonstrated value.
+
+### Principles
+
+1. Maximum Control. Minimum Abstraction.
+2. Implement only what is demonstrably necessary.
+3. Prefer native capabilities and inspectable source.
+4. Make small, controlled changes.
+5. Verify actual behavior before claiming completion.
+6. Keep infrastructure and deployment explicit.
+7. Document verified results for reuse.
+
+## SET Engineering Agent Registry
+
+| Issue | Agent |
+|---|---|
+| [#2](https://github.com/ThirDecade2020/SingularityDSA/issues/2) | Singularity Code Construction |
+| [#3](https://github.com/ThirDecade2020/SingularityDSA/issues/3) | Singularity Issue Architect |
+| [#4](https://github.com/ThirDecade2020/SingularityDSA/issues/4) | Singularity Audit |
+| [#5](https://github.com/ThirDecade2020/SingularityDSA/issues/5) | Singularity Distribution |
+| [#6](https://github.com/ThirDecade2020/SingularityDSA/issues/6) | Singularity Domain Registration |
+| [#7](https://github.com/ThirDecade2020/SingularityDSA/issues/7) | Singularity Intelligence Integration |
+| [#8](https://github.com/ThirDecade2020/SingularityDSA/issues/8) | Singularity Learning Architect |
+| [#9](https://github.com/ThirDecade2020/SingularityDSA/issues/9) | Singularity Interview Simulator |
+| [#10](https://github.com/ThirDecade2020/SingularityDSA/issues/10) | Singularity Verification |
+| [#11](https://github.com/ThirDecade2020/SingularityDSA/issues/11) | Singularity Interface Construction |
+| [#12](https://github.com/ThirDecade2020/SingularityDSA/issues/12) | Singularity IP Registry |
+| [#13](https://github.com/ThirDecade2020/SingularityDSA/issues/13) | Singularity Tutor |
+
+**Central registry:** [SET Engineering Toolkit #14](https://github.com/ThirDecade2020/SingularityDSA/issues/14)
+
+Registration does not imply that every agent is fully implemented or automated.
+
+## SET in Practice
+
+Singularity DSA is where SET is actively applied, tested, and refined.
+
+**Requirement → Inspection → Minimal Change → Local Verification →
+Production Deployment → Production Verification → Documentation**
+
+Our AI Tutor implementation demonstrates this process:
+
+- **Code Construction (#2):** Built the application and Worker backend.
+- **Intelligence Integration (#7):** Integrated Qwen3 through Workers AI.
+- **Verification (#10):** Tested syntax, inference, input limits, and rate limiting.
+- **Distribution (#5):** Deployed and verified the production application.
+- **Interface Construction (#11):** Built the interactive learning environment.
+
+This is an operational engineering workflow, not merely a proposed framework.
+
+## Development and Deployment
+
+Development uses Bash, direct source inspection, GitHub web/API, and
+Cloudflare Wrangler. Local Git commands are not required.
+
+Local development:
+
+    npx wrangler dev --port 8787
+
+Worker syntax validation:
+
+    node --check src/worker.js
+
+Deployment inspection:
+
+    npx wrangler deploy --dry-run
+
+Intentional production deployment:
+
+    npx wrangler deploy
+
+Production verification:
+
+    curl -sSI https://dsa.singularitymachines.si
+
+Local deployments and GitHub updates are separate operations.
+Keeping them synchronized is an explicit engineering responsibility.
 
 ## Engineering Governance
 
-Foundation and verification: https://github.com/ThirDecade2020/SingularityDSA/issues/1
+GitHub Issues document objectives, procedures, acceptance criteria,
+limitations, and verified engineering outcomes.
 
-Validated practices may contribute to the Singularity Engineering Template (SET).
+**Singularity DSA provides the implementation.
+SET captures the reusable engineering knowledge.**
 
-## Singularity DSA — MVP 001
+- [Foundation #1](https://github.com/ThirDecade2020/SingularityDSA/issues/1)
+- [SET Registry #14](https://github.com/ThirDecade2020/SingularityDSA/issues/14)
+- [Singularity Machines](https://singularitymachines.si)
 
-**Mission:** Develop exceptional engineers through programming, data structures, and algorithms from first principles.
-
-### Initial Features
-
-- [ ] Five atomic Python programming challenges
-- [ ] Proprietary ten-step DSA Deep Knowledge methodology
-- [ ] Interactive code editor and learning feedback
-- [ ] 15-minute Easy timer with untimed option
-- [ ] Challenge navigation and progress tracking
-- [ ] Responsive Singularity Machines visual design
-
-### Engineering Philosophy
-
-- Maximum Control, Minimum Abstraction.
-- Implement only what is demonstrably necessary.
-- Native-first development with minimal dependencies.
-- Engineering excellence includes exceptional interface design.
-
-### Engineering Knowledge
-
-- **SER:** Singularity Engineering Registry — planned index of engineering initiatives and verified lessons.
-- **SET:** Singularity Engineering Template — reusable practices derived from verified engineering work.
-- **Singularity DSA:** Applies lessons from previous Singularity Machines products.
-
-### Development Priorities
-
-1. Build the functional MVP.
-2. Verify the five learning challenges.
-3. Release the public application.
-4. Audit and optimize based on actual requirements.
+**Maximum Control. Minimum Abstraction.**
