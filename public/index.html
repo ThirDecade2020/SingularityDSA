@@ -3,43 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Singularity DSA | Singularity Machines</title>
-  <style>
-    :root {
-      --background: #080a0b;
-      --surface: #111517;
-      --green: #45c879;
-      --purple: #b99bff;
-      --text: #e4e7e8;
-      --border: #303638;
-    }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: var(--background);
-      color: var(--text);
-      font-family: system-ui, sans-serif;
-      text-align: center;
-    }
-    main {
-      max-width: 700px;
-      padding: 32px;
-    }
-    h1 { color: var(--green); font-size: clamp(2rem, 6vw, 4rem); }
-    p { line-height: 1.7; }
-    a { color: var(--purple); }
-  </style>
+  <meta name="theme-color" content="#080a0b">
+  <meta name="description" content="Master programming, data structures, and algorithms from first principles.">
+  <title>Singularity DSA | Master the Fundamentals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="https://singularitymachines.si">
+      <span class="brand-mark">◉</span>
+      <span>Singularity <strong>Machines</strong></span>
+    </a>
+    <span class="product-name">DSA / ATOMIC LEARNING</span>
+    <span class="version">MVP 001</span>
+  </header>
+
   <main>
-    <h1>Singularity DSA</h1>
-    <p>Learn programming, data structures, and algorithms from first principles.</p>
-    <p>Build understanding one atomic challenge at a time.</p>
-    <a href="https://singularitymachines.si">Singularity Machines</a>
+    <section class="hero">
+      <p class="eyebrow">THE FOUNDATION OF ENGINEERING</p>
+      <h1>Master the <span>fundamentals.</span></h1>
+      <p>Learn to think, build, test, and reason like an engineer.
+         One atomic challenge at a time.</p>
+    </section>
+
+    <section class="workspace" aria-label="Learning workspace">
+      <aside class="panel challenges">
+        <h2>Atomic Challenges</h2>
+        <p class="panel-subtitle">LEVEL 01 · EASY</p>
+        <nav id="challenge-list" aria-label="Challenges"></nav>
+      </aside>
+
+      <section class="panel learning">
+        <div class="section-heading">
+          <span class="eyebrow">DEEP KNOWLEDGE METHOD</span>
+          <span id="step-counter">01 / 10</span>
+        </div>
+        <h2 id="challenge-title">Print a Value</h2>
+        <p id="challenge-description"></p>
+
+        <div class="method-header">
+          <h3 id="step-title">Requirements & Constraints</h3>
+          <span id="step-status">STEP 01</span>
+        </div>
+
+        <div id="step-content" class="step-content"></div>
+
+        <section class="response-workspace" aria-label="Learning response">
+          <label for="step-response" class="editor-label">
+            YOUR EXPLANATION
+          </label>
+
+          <textarea
+            id="step-response"
+            rows="5"
+            placeholder="Explain your reasoning in your own words..."
+            spellcheck="true"
+          ></textarea>
+
+          <div class="editor-actions">
+            <button id="check-response" type="button">
+              Ask AI Tutor
+            </button>
+            <button id="show-hint" type="button">
+              Show Hint
+            </button>
+          </div>
+
+          <p id="response-feedback" aria-live="polite">
+            Write your explanation before continuing.
+          </p>
+
+          <section class="tutor-panel" aria-label="AI Tutor conversation">
+            <div class="tutor-header">
+              <span class="editor-label">SINGULARITY TUTOR</span>
+              <span id="tutor-status">NOT CONNECTED</span>
+            </div>
+            <div id="tutor-messages"
+                 class="tutor-messages"
+                 role="log"
+                 aria-live="polite"
+                 aria-relevant="additions text">
+              <p class="tutor-empty">
+                Your AI Tutor conversation will appear here.
+              </p>
+            </div>
+          </section>
+        </section>
+
+        <div class="step-controls">
+          <button id="previous-step" type="button">← Previous</button>
+          <button id="next-step" type="button">Next Step →</button>
+        </div>
+      </section>
+
+      <section class="panel practice">
+        <div class="section-heading">
+          <span class="eyebrow">PYTHON WORKSPACE</span>
+          <span class="difficulty">EASY</span>
+        </div>
+
+        <div class="timer">
+          <div>
+            <span class="timer-label">PRACTICE TIMER</span>
+            <output id="timer-display" aria-live="off">15:00</output>
+          </div>
+          <div class="timer-controls">
+            <button id="timer-start" type="button">Start</button>
+            <button id="timer-pause" type="button">Pause</button>
+            <button id="timer-reset" type="button">Reset</button>
+          </div>
+          <label class="untimed">
+            <input id="untimed-mode" type="checkbox">
+            Untimed mode
+          </label>
+        </div>
+
+        <label class="editor-label" for="code-editor">main.py</label>
+        <textarea id="code-editor" spellcheck="false"
+                  autocomplete="off" autocapitalize="off"
+                  aria-label="Python code editor"></textarea>
+
+        <div class="editor-actions">
+          <button id="run-code" type="button">▶ Run Code</button>
+          <button id="reset-code" type="button">Reset Code</button>
+        </div>
+
+        <div class="console">
+          <div class="console-title">OUTPUT / FEEDBACK</div>
+          <pre id="code-output" aria-live="polite">Ready to begin.</pre>
+        </div>
+
+        <p class="runtime-note">
+          MVP 001 uses a limited learning evaluator, not a full Python runtime.
+        </p>
+      </section>
+    </section>
+
+    <footer>
+      <span>MAXIMUM CONTROL. MINIMUM ABSTRACTION.</span>
+      <a href="https://singularitymachines.si">SINGULARITY MACHINES ↗</a>
+    </footer>
   </main>
 </body>
 </html>
-
-<!-- GitHub automated deployment verification -->
