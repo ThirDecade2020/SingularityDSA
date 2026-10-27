@@ -614,3 +614,53 @@ textarea#step-response {
 .code-editor-guidance strong {
   color: var(--chrome);
 }
+
+/* DSA visual refinement 006 — separated brand and product */
+.hero {
+  padding: 10px 0 16px;
+  text-align: center;
+}
+
+.hero .company-identity {
+  justify-content: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 4px 0;
+  gap: 10px;
+}
+
+.hero .company-mark {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.hero .company-name {
+  font-size: 11px;
+}
+
+.hero .company-link {
+  font-size: 11px;
+}
+
+.hero .company-motto {
+  font-size: 9px;
+}
+
+.hero h1 {
+  margin: 2px 0 4px;
+}
+
+@media (max-width: 480px) {
+  .hero .company-identity {
+    gap: 8px;
+  }
+  .hero .company-mark {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  .hero .company-motto {
+    font-size: 8px;
+  }
+}
