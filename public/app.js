@@ -70,6 +70,7 @@ let interval = null;
 let deadline = 0;
 const completed = new Set();
 const drafts = challenges.map(c => c.starter);
+let editorInitialized = false;
 const responses = challenges.map(() => Array(steps.length).fill(""));
 const responseChecks = challenges.map(() => Array(steps.length).fill(false));
 
@@ -124,12 +125,15 @@ function renderStep() {
 
 function selectChallenge(index) {
   saveResponse();
-  drafts[currentChallenge] = $("code-editor").value;
+  if (editorInitialized) {
+    drafts[currentChallenge] = $("code-editor").value;
+  }
   currentChallenge = index;
   currentStep = 0;
   $("challenge-title").textContent = challenges[index].title;
   $("challenge-description").textContent = challenges[index].description;
   $("code-editor").value = drafts[index];
+  editorInitialized = true;
   $("code-output").textContent = "Ready to begin.";
   resetTimer();
   renderChallenges();
