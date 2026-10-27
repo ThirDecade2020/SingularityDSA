@@ -97,7 +97,7 @@ main {
 }
 
 .hero {
-  padding: 52px 0 40px;
+  padding: 18px 0;
   text-align: center;
 }
 
@@ -320,7 +320,7 @@ footer {
   .challenges { grid-column: auto; }
   #challenge-list { grid-template-columns: 1fr; }
   .panel { padding: 18px; }
-  .hero { padding: 35px 0; }
+  .hero { padding: 18px 0; }
   .product-name { display: none; }
 }
 
