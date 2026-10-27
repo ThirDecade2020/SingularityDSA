@@ -100,6 +100,8 @@ introduced only when it provides demonstrated value.
 | [#12](https://github.com/ThirDecade2020/SingularityDSA/issues/12) | Singularity IP Registry |
 | [#13](https://github.com/ThirDecade2020/SingularityDSA/issues/13) | Singularity Tutor |
 
+| [#15](https://github.com/ThirDecade2020/SingularityDSA/issues/15) | Singularity Documentation Implementation |
+
 **Central registry:** [SET Engineering Toolkit #14](https://github.com/ThirDecade2020/SingularityDSA/issues/14)
 
 Registration does not imply that every agent is fully implemented or automated.
@@ -148,6 +150,38 @@ Production verification:
 
 Local deployments and GitHub updates are separate operations.
 Keeping them synchronized is an explicit engineering responsibility.
+
+## SET Agent Maturity and Selection
+
+**Canonical registry:** [SET Issue #14](https://github.com/ThirDecade2020/SingularityDSA/issues/14)
+
+SET currently registers 13 engineering agents.
+
+- **Concept:** Responsibilities and workflow defined.
+- **Implemented:** Workflow applied to a real engineering task.
+- **Verified:** Implementation independently validated with evidence.
+
+Each project selects only the agents it requires and references their
+canonical definitions rather than duplicating them.
+
+## SET Release Documentation Contract
+
+**Responsible agent:** [Singularity Documentation Implementation — SET (#15)](https://github.com/ThirDecade2020/SingularityDSA/issues/15)
+
+A release is complete only after:
+
+1. Source changes are implemented and verified.
+2. Verified source is published to GitHub.
+3. Production deployment and functionality are confirmed.
+4. Relevant engineering issues and milestones are updated.
+5. The README reflects the verified release.
+6. Source, production, issues, and README are reconciled.
+7. Commit SHAs, deployment evidence, and completion status are recorded.
+
+Preserve recoverable backups, use guarded modifications, verify GitHub
+SHAs, and document rollback considerations.
+
+A successful deployment alone does not constitute a completed release.
 
 ## Engineering Governance
 
